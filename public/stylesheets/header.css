@@ -1,0 +1,28 @@
+html{
+    width: 100%;
+}
+header {
+    width: 100%;
+    display: flex;
+    color: antiquewhite;
+    background-color: brown;
+    /* height: 200px; */
+    /* justify-content: space-around; */
+    
+}
+ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin: 20px;
+    
+}
+a{
+    font-size: xx-large;
+}
+li {
+    /* flex-grow: 1; */
+
+}
