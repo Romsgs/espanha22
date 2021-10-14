@@ -3,10 +3,12 @@ module.exports = {
     barcelona: (req, res) => {
         res.render('barcelona')
     },
-    voos: (req, res) => {
-        let voos = Voo.findAll({include: {model:companiasaereas, as:'Companias Aereas'}})
-        console.log(voo)
-        res.render('voos',{Voo})
+    voos: async (req, res) => {
+        // let voos = Voo.findAll({include: {model:companiasaereas, as:'companiasaereas'}})
+        const voos = await Voo.findAll()
+        //const companias = await companiasaereas.findAll()
+        console.log(voos)
+        res.render('voos',{Voos })
     }
 
 }

@@ -1,24 +1,27 @@
 module.exports = (sequelize, DataTypes) => {
+
     const voo = sequelize.define(
-        'Voos',
+        'voos',
         {
             numeroDoVoo: DataTypes.STRING,
             companiasaereas_id: DataTypes.INTEGER,
-            horario: DataTypes.TIME
+            horario: DataTypes.TIME,
+            trajeto: DataTypes.STRING
+
         },
         {
-            tableName: 'Voos',
+            tableName: 'voos',
             timestamps: false
         });
-        voo.associate = (models) => {
-            voo.belongsTo(
-                models.companiasaereas,
-                {
-                    as: 'companiasaereas',
-                    foreignKey:'companiasaereas_id',
+        // voo.associate = (models) => {
+        //     voo.belongsTo(
+        //         models.companiasaereas,
+        //         {
+        //             as: 'companiasaereas',
+        //             foreignKey:'companiasaereas_id'
                     
-                }
-            )
-        }
+        //         }
+        //     )
+        // }
     return voo;
 }
