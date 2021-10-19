@@ -1,0 +1,19 @@
+table{
+    width: 100%;
+    background-color: bisque;
+    text-align: center;
+    
+}
+th{
+    padding: 15px;
+    font-size: xx-large;
+}
+tr{
+    
+    
+}
+tr:nth-child(even){background-color:burlywood;}
+td{
+    padding: 10px;
+    font-size: xx-large;
+}

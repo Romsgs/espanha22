@@ -3,21 +3,27 @@
   <head>
     <title>Voos</title>
     <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel='stylesheet' href='/stylesheets/voos.css' />
   </head>
   <body>
     <%- include('./partials/header') %>
     <table>
-
         <tr>
-            <th>Origem</th>
-            <th>Destino</th>
-            <th>compania</th>
-            <th>numero</th>
+            <th>Trajeto</th>
+            <th>Horário</th>
+            <th>Compania</th>
+            <th>Numero do voo</th>
         </tr>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-
+        <!-- Inicio do laço for -->
+        <% for(let voo of voos) { %>
+        <tr>
+          <td><%= voo.trajeto %></td>
+          <td><%= voo.horario %></td>
+          <td><%= voo.Voo_Compania_Aerea.nome %></td>
+          <td><%= voo.numeroDoVoo %></td>
+        </tr>
+        <!-- Fim do laço for -->
+        <% } %>
     </table>
   </body>
 </html>

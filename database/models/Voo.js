@@ -1,7 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
 
     const voo = sequelize.define(
-        'voos',
+        //nome da tabela na model
+        'Voo',
         {
             numeroDoVoo: DataTypes.STRING,
             companiasaereas_id: DataTypes.INTEGER,
@@ -10,18 +11,18 @@ module.exports = (sequelize, DataTypes) => {
 
         },
         {
-            tableName: 'voos',
+            tableName: 'voos', //nome da tabela no Banco de dados
             timestamps: false
         });
-        // voo.associate = (models) => {
-        //     voo.belongsTo(
-        //         models.companiasaereas,
-        //         {
-        //             as: 'companiasaereas',
-        //             foreignKey:'companiasaereas_id'
+        voo.associate = (models) => {
+            voo.belongsTo(
+                models.CompaniaAerea,
+                {
+                    as: 'Voo_Compania_Aerea', // nome da tabela como apelido que sera usado no controller
+                    foreignKey:'companiasaereas_id'
                     
-        //         }
-        //     )
-        // }
+                }
+            )
+        }
     return voo;
 }
